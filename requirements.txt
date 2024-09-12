@@ -1,0 +1,10 @@
+Flask
+tensorflow
+numpy
+opencv-python
+opencv-python-headless
+mtcnn
+matplotlib
+pillow
+scikit-learn
+keras
