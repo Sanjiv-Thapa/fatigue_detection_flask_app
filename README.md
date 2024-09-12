@@ -71,3 +71,30 @@ nsure the pre-trained model fatigue_model.h5 is located in the models/ directory
 # run the application
 python app.py
 open in the browser :http://127.0.0.1:5000
+## Usage
+Upload Video: From the home page, upload a video file. The video should capture a person's face to detect fatigue accurately.
+Processing: The system extracts frames from the video, detects faces, and then uses the CNN model to analyze whether the eyes and mouth are open or closed.
+Results: After processing, the system calculates PERCLOS and POM. If fatigue is detected, it displays a message indicating the detection of fatigue. Otherwise, it shows that the person is alert.
+## Model Explanation
+The CNN model used in this project is designed to classify facial features:
+
+Eyes (Open/Closed): The model identifies whether a person’s eyes are open or closed in each video frame.
+Mouth (Open/Closed): The model also detects if the person’s mouth is open, which could indicate yawning, a common sign of fatigue.
+## Metrics:
+PERCLOS (Percentage of Eye Closure): This metric measures the proportion of time the eyes are closed during the video.
+POM (Percentage of Mouth Opening): This metric measures the proportion of time the mouth is open during the video.
+The system detects fatigue if PERCLOS > 50% or POM > 50%, indicating potential drowsiness.
+
+## Preprocessing
+The preprocessing steps include:
+
+Frame Extraction: Extracts frames from the video at regular intervals.
+Face Detection: Detects faces in each frame using MTCNN.
+Feature Extraction: Identifies key points like eyes and mouth for further processing.
+Resizing: Resizes the detected eye and mouth regions for input into the CNN model.
+Prediction: The CNN model classifies each frame as eyes open/closed and mouth open/closed.
+##  Results
+Once the system finishes analyzing the video, it displays the following results:
+
+Fatigue Detected: If either PERCLOS > 50% or POM > 50%.
+No Fatigue Detected: If the user is alert based on the analyzed metrics.
