@@ -35,7 +35,7 @@ If **PERCLOS** exceeds 50% or **POM** exceeds 50%, the system detects fatigue.
 - OpenCV (for video frame processing)
 - MTCNN (for face, eye, and mouth detection)
 ## Usage
-1. 1. **Upload a video **: From the home page, upload a video file. The video should clearly capture the person's face for accurate fatigue detection.
+1.**Upload video**: From the home page, upload a video file. The video should clearly capture the person's face for accurate fatigue detection.
 2.**Processing**: The system will extract frames from the video, detect faces, and use the CNN model to analyze whether the eyes and mouth are open or closed.
 3.**Results**: After processing, the system will calculate PERCLOS and POM. If fatigue is detected (based on the metrics), a message will indicate the detection of fatigue; otherwise, it will show that the person is alert.
 ## Model Explanation
