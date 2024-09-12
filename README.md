@@ -34,35 +34,42 @@ If **PERCLOS** exceeds 50% or **POM** exceeds 50%, the system detects fatigue.
 - Flask (for the web application)
 - OpenCV (for video frame processing)
 - MTCNN (for face, eye, and mouth detection)
+
 ## Usage
-1.**Upload video**: From the home page, upload a video file. The video should clearly capture the person's face for accurate fatigue detection.
-2.**Processing**: The system will extract frames from the video, detect faces, and use the CNN model to analyze whether the eyes and mouth are open or closed.
-3.**Results**: After processing, the system will calculate PERCLOS and POM. If fatigue is detected (based on the metrics), a message will indicate the detection of fatigue; otherwise, it will show that the person is alert.
+
+1. **Upload video**: From the home page, upload a video file. The video should clearly capture the person's face for accurate fatigue detection.
+
+2. **Processing**: The system will extract frames from the video, detect faces, and use the CNN model to analyze whether the eyes and mouth are open or closed.
+
+3. **Results**: After processing, the system will calculate PERCLOS and POM. If fatigue is detected (based on the metrics), a message will indicate the detection of fatigue; otherwise, it will show that the person is alert.
+
+
+
 ## Model Explanation
 The CNN model used in this project is designed to classify facial features:
 
-1**Eyes (Open/Closed)**: The model identifies whether a person's eyes are open or closed in each frame of the video.
+1. **Eyes (Open/Closed)**: The model identifies whether a person's eyes are open or closed in each frame of the video.
 2. **Mouth (Open/Closed)**: The model detects whether the person's mouth is open, a common sign of yawning, which is associated with fatigue.
 
 ## Metrics
-1.**PERCLOS (Percentage of Eye Closure)**: Measures the proportion of time the eyes are closed during the video.
-2.**POM (Percentage of Mouth Opening)**: Measures the proportion of time the mouth is open during the video.
+1. **PERCLOS (Percentage of Eye Closure)**: Measures the proportion of time the eyes are closed during the video.
+2. **POM (Percentage of Mouth Opening)**: Measures the proportion of time the mouth is open during the video.
 The system detects fatigue if PERCLOS > 50% or POM > 50%, indicating potential drowsiness.
 
 ## Preprocessing
 The preprocessing steps include:
 
-1.**Frame Extraction**: Extracts frames from the video at regular intervals.
-2.**Face Detection**: Detects faces in each frame using MTCNN.
-3.**Feature Extraction**: Identifies key points like eyes and mouth for further analysis.
-4.**Resizing**: Resizes the detected eye and mouth regions to the appropriate size for input into the CNN model.
-5.**Prediction**: The CNN model classifies each frame as eyes open/closed and mouth open/closed.
+1. **Frame Extraction**: Extracts frames from the video at regular intervals.
+2. **Face Detection**: Detects faces in each frame using MTCNN.
+3. **Feature Extraction**: Identifies key points like eyes and mouth for further analysis.
+4. **Resizing**: Resizes the detected eye and mouth regions to the appropriate size for input into the CNN model.
+5. **Prediction**: The CNN model classifies each frame as eyes open/closed and mouth open/closed.
 
 ## Results
 Once the system finishes analyzing the video, it displays one of the following results:
 
 1. **Fatigue Detected**: If either PERCLOS > 50% or POM > 50%.
-2 . **No Fatigue Detected**: If the user is alert based on the analyzed metrics.
+2. **No Fatigue Detected**: If the user is alert based on the analyzed metrics.
 
 
 ## Directory Structure
