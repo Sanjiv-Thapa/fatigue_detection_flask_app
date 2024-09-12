@@ -33,7 +33,28 @@ If either PERCLOS is higher than 50% or POM is higher than 50%, fatigue is detec
 - MTCNN (for face, eye, and mouth detection)
 
 ## Directory Structure
-fatigue_detection_app/ │ ├── models/ # Directory for the pre-trained model(s) │ └── fatigue_model.h5 # Pre-trained fatigue detection model │ ├── static/ # Static assets for the web app (CSS, JS, etc.) │ ├── templates/ # HTML templates for Flask │ ├── index.html # Home page to upload video files │ └── result.html # Result page displaying fatigue detection result │ ├── uploads/ # Directory for uploaded video files │ ├── utils/ # Utility scripts for processing │ ├── model_utils.py # Helper functions for fatigue detection │ └── dataset.py # Dataset handling functions │ ├── app.py # Main Flask application ├── requirements.txt # Python dependencies for the project ├── README.md # Project description and instructions └── .gitignore
+fatigue_detection_app/
+│
+├── models/                    # Directory for the pre-trained model(s)
+│   └── fatigue_model.h5        # Pre-trained fatigue detection model
+│
+├── static/                     # Static assets for the web app (CSS, JS, etc.)
+│
+├── templates/                  # HTML templates for Flask
+│   ├── index.html              # Home page to upload video files
+│   └── result.html             # Result page displaying fatigue detection result
+│
+├── uploads/                    # Directory for uploaded video files
+│
+├── utils/                      # Utility scripts for processing
+│   ├── model_utils.py          # Helper functions for fatigue detection
+│   └── dataset.py              # Dataset handling functions
+│
+├── app.py                      # Main Flask application
+├── requirements.txt            # Python dependencies for the project
+├── README.md                   # Project description and instructions
+└── .gitignore                  # Files to ignore in version control
+
 ## Installation
 
 To run this project locally, follow the steps below:
