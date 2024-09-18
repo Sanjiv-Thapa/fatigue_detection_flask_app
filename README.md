@@ -119,4 +119,6 @@ docker build -t fatigue-detection-app .
 docker run -p 5000:5000 fatigue-detection-app
 ## Run the application using Docker Compose:
 docker-compose up
+
+
 This will also start the application, and you can access it by going to http://localhost:5000 in your browser.
