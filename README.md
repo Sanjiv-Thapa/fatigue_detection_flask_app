@@ -95,8 +95,8 @@ fatigue_detection_app/
 ├── app.py                      # Main Flask application
 ├── requirements.txt            # Python dependencies for the project
 ├── README.md                   # Project description and instructions
-└── .gitignore                  # Files to ignore in version control
-
+└── .gitignore                  
+```
 ## Installation
 
 To run this project locally, follow these steps:
@@ -106,7 +106,17 @@ To run this project locally, follow these steps:
 ```bash
 git clone https://github.com/your-username/fatigue_detection_app.git
 cd fatigue_detection_app
+```
 ### Install Dependencies
 pip install -r requirements.txt
 Run the Application
 python app.py
+
+### Docker Instructions
+## Build the Docker Image
+docker build -t fatigue-detection-app .
+## Run the docker container
+docker run -p 5000:5000 fatigue-detection-app
+## Run the application using Docker Compose:
+docker-compose up
+This will also start the application, and you can access it by going to http://localhost:5000 in your browser.
